@@ -5,6 +5,7 @@ import { Route, Switch, useHistory } from 'react-router-dom';
 import { connect } from 'react-redux';
 import RoomInside from './components/RoomInside/RoomInside';
 import { setUsername } from './redux/actions'
+import Error404 from './components/Error/Error404';
 
 
 function App( { username, setUsername } ) {
@@ -32,7 +33,7 @@ function App( { username, setUsername } ) {
       <Route exact path="/rooms" component={Rooms}/>
       <Route path="/rooms/:id" component={RoomInside} />
       <Route path="*">
-        <h1>Страница не найдена</h1>
+        <Error404 />
       </Route>
     </Switch>
   );
